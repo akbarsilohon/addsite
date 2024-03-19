@@ -1,0 +1,344 @@
+.spek_post{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 2rem;
+}
+.inner_spek_post{
+    position: relative;
+}
+.spek_breadchrume{
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #444;
+}
+.spek_breadchrume a{
+    color: #ff5200;
+}
+.spek_header{
+    display: grid;
+    grid-template-columns: 400px auto;
+    grid-gap: 3rem;
+    margin-bottom: 2rem;
+}
+.spek_header .spek_img_thumb{
+    height: auto;
+}
+.spek_data{
+    position: relative;
+}
+.spek_data .spek_single_title{
+    font-family: 'Oswald';
+    font-size: 2.6rem;
+    line-height: 3rem;
+}
+.spek_box_data{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: .5px rgb(153, 153, 153, .6) solid;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.spek_box_data .info_harga{
+    font-size: 1.4rem;
+    color: #333;
+    font-family: 'Oswald';
+    margin-bottom: 1rem;
+}
+.spek_box_data .harga_net{
+    color: #ff6600;
+    font-family: 'Oswald';
+    font-size: 1.9rem;
+    margin-bottom: .4rem;
+    font-weight: bold;
+}
+.spek_box_data .info_varian{
+    color: #666;
+    font-family: 'Oswald';
+    font-size: .9rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+.spek_data .box_action{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+}
+.box_action .box_shopee,
+.box_action .box_lazada{
+    width: 50%;
+    border: none;
+    padding: .7rem 0;
+    display: block;
+    border-radius: .2rem;
+}
+.box_shopee{
+    background-color: #ff5200;
+}
+.box_lazada{
+    background-color: #000083;
+}
+.box_shopee a,
+.box_lazada a{
+    color: #fff;
+    display: block;
+}
+
+/* spek_fitur */
+.spek_fitur{
+    position: relative;
+    margin-top: 3rem;
+    width: 100%;
+}
+.spek_fitur .fitur_hp{
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    background-color: rgb(255, 102, 0, .6);
+    padding: .7rem;
+}
+.data_fitur{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.data_fitur .fitur_list::before{
+    content: "\2713";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-weight: bold;
+    color: var(--hover);
+}
+.data_fitur .fitur_list{
+    font-size: 18px;
+    line-height: 1.7rem;
+    color: #444;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.link_review{
+    font-size: 18px;
+    font-weight: bold;
+}
+.link_review a{
+    color: #ff5200;
+}
+
+/* article_post_body */
+.article_post_body{
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+}
+.article_post_body .spek_hp{
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    background-color: rgb(255, 102, 0, .6);
+    padding: .7rem;
+    margin-bottom: 1rem;
+}
+.article_post_body table,
+.article_post_body p{
+    font-size: 18px;
+    line-height: 1.7rem;
+    color: #333;
+}
+.article_post_body table{
+    width: 100%;
+    margin-bottom: 30px;
+    border: none;
+}
+table tbody tr td {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--link);
+    font-size: 16px;
+    line-height: 2rem;
+    color: var(--bl2);
+    word-break: break-all;
+}
+tbody tr td:nth-child(1){
+    width: 250px;
+}
+
+/* Related Spek */
+.spek_loop {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+}
+.spek_section_title {
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    background-color: rgb(255, 102, 0, .6);
+    padding: .7rem;
+    margin-bottom: 1rem;
+}
+.spek_looping {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+}
+.spek_article {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    border: 0.5px rgb(153, 153, 153, .6) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.spek_article a.spek_thum_uri {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem 1rem;
+    overflow: hidden;
+    display: block;
+}
+.spek_article a.spek_thum_uri img.spek_thum_img {
+    max-width: 100%;
+    height: auto;
+}
+.spek_uri_title {
+    margin: 0.5rem 0;
+    font-family: 'Oswald';
+    line-height: 1.2rem;
+    font-size: .96rem;
+    padding: 0 .5rem;
+}
+.spek_price {
+    font-weight: bold;
+    color: #ff6600;
+    font-family: 'Oswald';
+    font-size: .8rem;
+    margin-bottom: 1rem;
+}
+.silo_paginate {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+.silo_paginate .page-numbers{
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    background-color: var(--link);
+    color: var(--pt1);
+    font-family: 'Oswald';
+}
+.silo_paginate span.current {
+    background-color: var(--hover)
+}
+
+/* Sidebar */
+.space_sidebar{
+    margin-top: 3rem;
+}
+.spek_hp_tb::before,
+.spek_hp_tb::after{
+    content: '';
+    display: block;
+    border: 1px solid rgb(255, 102, 0, .5);
+}
+.spek_hp_tb::before{
+    margin-bottom: .5rem;
+}
+.spek_hp_tb::after{
+    margin-top: .5rem;
+}
+.spek_hp_tb{
+    margin-bottom: 1rem;
+}
+.list_brand{
+    list-style: none;
+    margin-bottom: 3rem;
+}
+.list_brand .is_branding::before{
+    content: '\21D2 ';
+    font-size: 2rem;
+    color: #ff6600;
+}
+.list_brand .is_branding{
+    font-size: 1.3rem;
+    font-family: 'Oswald';
+}
+.list_brand .is_posts::before{
+    content: '\21D8';
+    color: #ff6600;
+}
+.list_brand .is_posts{
+    font-size: 1rem;
+    font-family: 'Oswald';
+    margin-bottom: 1rem;
+}
+.list_brand .is_posts a{
+    line-height: 1.5rem;
+}
+
+
+/* Tablet */
+@media( max-width: 780px ){
+    .spek_post{
+        grid-template-columns: 1fr;
+    }
+    .spek_header{
+        grid-template-columns: 350px auto;
+        grid-gap: 2rem;
+    }
+    .spek_data .spek_single_title{
+        font-size: 2.2rem;
+        line-height: 2.7rem;
+    }
+    .spek_looping {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .space_sidebar{
+        margin-top: 2rem;
+    }
+}
+
+/* Mobile */
+@media( max-width: 580px ){
+    .spek_breadchrume{
+        margin-top: -1rem;
+    }
+    .spek_header{
+        grid-template-columns: 1fr;
+    }
+    .spek_data .spek_single_title{
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        margin-top: -15px;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .spek_box_data{
+        position: relative;
+    }
+    .data_fitur{
+        grid-template-columns: 1fr;
+    }
+    tbody tr td:nth-child(1){
+        width: 150px;
+    }
+    .spek_looping {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,164 @@
+/* Css For spesifikasi */
+.spek_grid {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 2rem;
+    margin: 2rem 0;
+}
+.spek_loop {
+    position: relative;
+    width: 100%;
+}
+.spek_section_title {
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+#inspek_search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+#inspek_search .silo_spek_search{
+    width: 100%;
+    max-width: 400px;
+}
+.silo_spek_search input{
+    width: 100%;
+    outline: none;
+    border: 1px solid rgb(255, 102, 0, .9);
+    box-sizing: border-box;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+.spek_looping {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+.spek_article {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    border: 0.5px #999 solid;
+    /* padding: 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.spek_article a.spek_thum_uri {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem 1rem;
+    overflow: hidden;
+    display: block;
+}
+.spek_article a.spek_thum_uri img.spek_thum_img {
+    max-width: 100%;
+    height: auto;
+}
+.spek_uri_title {
+    margin: 0.5rem 0;
+    font-family: 'Oswald';
+    line-height: 1.2rem;
+    font-size: .96rem;
+    padding: 0 .5rem;
+}
+.spek_price {
+    font-weight: bold;
+    color: #ff6600;
+    font-family: 'Oswald';
+    font-size: .8rem;
+    margin-bottom: 1rem;
+}
+.silo_paginate {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+.silo_paginate .page-numbers{
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    background-color: var(--link);
+    color: var(--pt1);
+    font-family: 'Oswald';
+}
+.silo_paginate span.current {
+    background-color: var(--hover)
+}
+
+/* Sidebar */
+.space_sidebar{
+    margin-top: 10rem;
+}
+.spek_hp_tb::before,
+.spek_hp_tb::after{
+    content: '';
+    display: block;
+    border: 1px solid rgb(255, 102, 0, .5);
+}
+.spek_hp_tb::before{
+    margin-bottom: .5rem;
+}
+.spek_hp_tb::after{
+    margin-top: .5rem;
+}
+.spek_hp_tb{
+    margin-bottom: 1rem;
+}
+.list_brand{
+    list-style: none;
+}
+.list_brand .is_branding::before{
+    content: '\21D2 ';
+    font-size: 2rem;
+    color: #ff6600;
+}
+.list_brand .is_branding{
+    font-size: 1.3rem;
+    font-family: 'Oswald';
+}
+
+/* Hasil pencarian */
+.spek_loopingsss{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+}
+@media(max-width:780px){
+    .spek_grid{
+        display: block;
+    }
+    .space_sidebar{
+        margin-top: 3rem;
+    }
+    .spek_loopingsss{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media(max-width:580px){
+    .spek_looping{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .spek_uri_title {
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .spek_price {
+        font-size: 1rem;
+    }
+    .spek_loopingsss{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

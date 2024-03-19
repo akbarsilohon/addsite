@@ -1,0 +1,24 @@
+i.silo_icon_mce{
+    background-image: url('../../img/favicon.png');
+}
+i.buton_mce{
+    background-image: url('../icon/button.png');
+}
+i.related_mce{
+    background-image: url('../icon/left-right.png');
+}
+i.product_mce{
+    background-image: url('../icon/shopping-bag.png');
+}
+i.ads_mce{
+    background-image: url('../icon/advertisements.png');
+}
+i.ads_icon_mce{
+    background-image: url('../icon/logotype.png');
+}
+i.toc_mce{
+    background-image: url('../icon/edit-table.png');
+}
+i.video_mce{
+    background-image: url('../icon/video.png');
+}
