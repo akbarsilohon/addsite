@@ -1,104 +1,82 @@
+<?php 
+/**
+ * File header tema wordpress silohon add site
+ * @package silohon-add-site
+ * @link https://github.com/akbarsilohon/addsite.git
+ */
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php echo bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <?php
-        if( ! is_admin() ){
-            $kodeHeader = get_option( 'insert_header' );
-            if( !empty( $kodeHeader ) ){
-                print( $kodeHeader );
-            }
-        }
-    wp_head();
-    ?>
+    <link rel="pingback" href="<?php echo bloginfo('pingback_url'); ?>">
 
-        <?php
-            $home_url = esc_url(home_url('/'));
-            $parsed_url = wp_parse_url($home_url);
-            $protocol_removed_url = '//' . $parsed_url['host'] . $parsed_url['path'];
-		?>
-	<link rel='dns-prefetch' href='<?php echo $protocol_removed_url; ?>' />
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php if(function_exists('wp_body_open')) : wp_body_open(); endif; ?>
-<noscript>
-    <style>
-        header.silo_header,
-        .silo_flex,
-        .container,
-        footer{
-            display: none;
-        }
-    </style>
-    <h1>Ada Kesalahan</h1>
-    <p>Aktifkan JavaScript Browser untuk menampilkan konten</p>
-</noscript>
-<!-- Main Header -->
-<header class="silo_header">
-    <div class="headers container">
-        <!-- Header Lef -->
-        <div id="header_left" class="header_left">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+<header class="add_head">
+    <div class="container">
+        <div class="add_hf">
+            <div id="add_side" class="add_side">
+                <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                </svg>
+            </div>
 
-        <!-- Header Mid -->
-        <div class="header_mid">
-            <div itemscope itemtype="http://schema.org/Organization">
-                <a itemprop="url" href="<?php bloginfo('url'); ?>">
-                    <?php 
-                        $defLogo = SILO_URI . '/img/logo.png';
-                        $atr = 'itemprop="logo" class="silo_logo" width="80" height="60"';
-                        $logo = get_option('silo_logo');
-
-                        if( !empty( $logo )){
-                            echo '<img '.$atr.' src="'.$logo.'" alt="'.get_bloginfo('name').'" />';
-                        } else{
-                            echo '<img '.$atr.' src="'.$defLogo.'" alt="'.get_bloginfo('name').'" />';
-                        }
+            <!-- logo -->
+            <div class="add_logo" itemscope itemtype="http://schema.org/Organization">
+                <a itemprop="url" href="<?php echo bloginfo( 'url' ); ?>">
+                    <?php
+                    $logo = get_option( 'add_logo' );
+                    $defLogo = ADD_URI . '/asset/image/logo.png';
+                    $fixLogo = !empty( $logo ) ? $logo : $defLogo;
+                    echo '<img src="'. $fixLogo .'" class="add_img" width="80" height="60">';
                     ?>
                 </a>
             </div>
 
-            <?php wp_nav_menu( array(
-                'theme_location' => 'header',
-                'container' => 'ul',
-                'menu_class' => 'big_menu',
-            )); ?>
+            <!-- Search desktop -->
+            <form action="<?php echo home_url( '/' ); ?>" method="get" class="add_sdesk">
+                <input type="text" name="s" id="add_search_desktop_device" placeholder="Cari disini...">
+                <button type="submit" class="add_sdesk_btn">Cari</button>
+            </form>
         </div>
-
-        <!-- Header Right -->
-        <div class="header_right"></div>
     </div>
 </header>
 
-<!-- Menu Flexbox -->
-<div id="silo_flex" class="silo_flex flex100">
-    <div class="flex_top">
-        <a href="<?php bloginfo('url'); ?>">
-            <h3 class="flex_title"><?php bloginfo('name'); ?></h3>
-        </a>
-        <div id="flex_close" class="flex_close">
-            <span></span>
-            <span></span>
+<div id="add_flexbox" class="add_flexbox flex100">
+    <div class="flex_head">
+        <h3 class="add_flxt"><?php echo bloginfo( 'name' ); ?></h3>
+        <div id="add_close" class="add_close">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M8.00386 9.41816C7.61333 9.02763 7.61334 8.39447 8.00386 8.00395C8.39438 7.61342 9.02755 7.61342 9.41807 8.00395L12.0057 10.5916L14.5907 8.00657C14.9813 7.61605 15.6144 7.61605 16.0049 8.00657C16.3955 8.3971 16.3955 9.03026 16.0049 9.42079L13.4199 12.0058L16.0039 14.5897C16.3944 14.9803 16.3944 15.6134 16.0039 16.0039C15.6133 16.3945 14.9802 16.3945 14.5896 16.0039L12.0057 13.42L9.42097 16.0048C9.03045 16.3953 8.39728 16.3953 8.00676 16.0048C7.61624 15.6142 7.61624 14.9811 8.00676 14.5905L10.5915 12.0058L8.00386 9.41816Z" fill="#0F0F0F"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM3.00683 12C3.00683 16.9668 7.03321 20.9932 12 20.9932C16.9668 20.9932 20.9932 16.9668 20.9932 12C20.9932 7.03321 16.9668 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12Z" fill="#0F0F0F"/>
+                </g>
+            </svg>
         </div>
     </div>
-
-    <form action="<?php echo home_url('/'); ?>" method="get" class="search_mobile_from">
-        <input type="text" id="s" name="s" placeholder="Search Here.." />
-        <button class="btn_mobile_search" type="submit">Search</button>
+    <form action="<?php echo home_url( '/' ); ?>" method="get" class="add_smob">
+        <input type="text" name="s" id="add_search_mob_device" placeholder="Cari disini...">
+        <button type="submit" class="add_smob_btn">Cari</button>
     </form>
-    <?php wp_nav_menu( array(
-        'theme_location' => 'header',
-        'container' => 'ul',
-        'menu_class' => 'menu_flex'
-    )); wp_nav_menu( array(
-        'theme_location' => 'footer',
-        'container' => 'ul',
-        'menu_class' => 'menu_flex f-moba'
-    )); ?>
+
+    <?php 
+        wp_nav_menu( array(
+            'theme_location'        =>  'header-menu',
+            'container'             =>  'ul',
+            'menu_class'            =>  'add_head_menu',
+            'menu_id'               =>  'add_head_menu'
+        ));
+    ?>
 </div>

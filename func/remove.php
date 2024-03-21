@@ -1,4 +1,11 @@
 <?php
+/**
+ * Fungsi menghilangkan scrips
+ * css, dan lain sebagainya yang tidak dibutuhkan
+ * pada tema silohon add site
+ * @package silohon-add-site
+ * @link https://github.com/akbarsilohon/addsite.git
+ */
 
 add_filter( 'show_admin_bar', '__return_false' );
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -14,19 +21,12 @@ add_action('wp_print_styles', function (): void {
     wp_dequeue_style('wp-block-library-theme');
 });
 
-// remove dashicons
+// Menghilangkan dashicon ---------------------
+// --------------------------------------------
 function wpdocs_dequeue_dashicon() {
-	if (current_user_can( 'update_core' )) {
-	    return;
-	}
-	wp_deregister_style('dashicons');
+    if (current_user_can( 'update_core' )) {
+        return;
+    }
+    wp_deregister_style('dashicons');
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
-
-add_action( 'wp_enqueue_scripts', 'mywptheme_child_deregister_styles', 20 );
-function mywptheme_child_deregister_styles() {
-    wp_dequeue_style( 'classic-theme-styles' );
-	if( !is_admin() ){
-		wp_deregister_script('jquery');
-	}
-}
