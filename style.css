@@ -23,10 +23,10 @@ Text Domain: silohon-add-site
     font-display: swap;
 }
 *{
-    list-style: none;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Pt Serif';
@@ -40,6 +40,11 @@ body{
     padding: 0 20px;
     margin: 0 auto;
 }
+img{
+    width: 0;
+    height: 0;
+}
+/* Header */
 header.add_head{
     position: relative;
     background-color: #fff;
@@ -73,6 +78,7 @@ header.add_head{
     display: flex;
     justify-content: end;
     gap: 10px;
+    box-sizing: border-box;
 }
 .add_sdesk input#add_search_desktop_device{
     outline: none;
@@ -103,6 +109,7 @@ header.add_head{
     max-width: 400px;
     min-height: 100vh;
     transition: .5s;
+    box-sizing: border-box;
 }
 .add_flexbox .flex_head{
     display: flex;
@@ -142,4 +149,117 @@ header.add_head{
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 5px;
+}
+.add_head_menu{
+    list-style: none;
+    font-family: 'Oswald';
+}
+.add_head_menu li{
+    margin: 10px 0;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #d56340;
+    width: max-content;
+    transition: all .5s;
+}
+.add_head_menu li:hover a{
+    color: #d56340;
+    transition: all .5s;
+}
+.add_head_menu li a{
+    text-decoration: none;
+    color: #000;
+}
+.add_head_menu li.current-menu-item a{
+    color: #d56340;
+}
+.add_head_menu .menu-item-has-children{
+    border-bottom: none;
+}
+.sub-menu{
+    margin-top: 1rem;
+    list-style: none;
+}
+.add_head_menu .sub-menu li::before {
+    content: '\21E2 ';
+    margin-right: 5px
+}
+
+/* Footer */
+.add_footer{
+    width: 100%;
+    margin-top: 4rem;
+}
+.foo_top{
+    background-color: #dddddd;
+}
+.add_ftop{
+    padding: 1rem 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: 'Oswald';
+}
+.add_ftop li{
+    flex-wrap: nowrap;
+}
+.add_ftop li a{
+    color: #000;
+    text-decoration: none;
+    transition: all .5s;
+}
+.add_ftop li:hover a{
+    transition: all .5s;
+    color: #d56340;
+}
+.foo_bot{
+    background-color: #000;
+}
+.foInner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-family: 'Oswald';
+    font-size: 14px;
+    color: #fff;
+}
+.innerLef a,
+.innerRight a{
+    color: #d56340;
+    text-decoration: none;
+}
+
+/* Desain tablet */
+@media( max-width: 780px ){
+    .add_hf{
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .add_sdesk{
+        display: none;
+    }
+    header.add_head{
+        padding-top: 1rem;
+    }
+    .add_smob{
+        display: flex;
+    }
+}
+
+/* Desain mobile */
+@media( max-width: 560px ){
+    .add_logo a .add_img{
+        height: 30px;
+    }
+    header.add_head{
+        padding-bottom: 7px;
+    }
+    .add_ftop{
+        padding-top: 40px;
+    }
 }

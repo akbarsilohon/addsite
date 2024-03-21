@@ -76,7 +76,8 @@
             'theme_location'        =>  'header-menu',
             'container'             =>  'ul',
             'menu_class'            =>  'add_head_menu',
-            'menu_id'               =>  'add_head_menu'
+            'menu_id'               =>  'add_head_menu',
+            'fallback_cb'           =>  false
         ));
     ?>
 </div>

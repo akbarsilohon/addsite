@@ -11,6 +11,7 @@
 // ==============================================
 define( 'ADD_NAME', 'SILOHON' );
 define( 'ADD_VER', '1.7.4' );
+define( 'ADD_THEME_URI', 'https://github.com/akbarsilohon/addsite.git' );
 define( 'ADD_URI', get_template_directory_uri());
 define( 'ADD_DIR', get_template_directory());
 
