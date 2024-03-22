@@ -7,6 +7,9 @@
  * @link https://github.com/akbarsilohon/addsite.git
  */
 
+
+// Load more homepage ======================
+// =========================================
 add_action( 'wp_ajax_nopriv_add_post_load_more', 'add_post_load_more' );
 add_action( 'wp_ajax_add_post_load_more', 'add_post_load_more' );
 function add_post_load_more(){

@@ -51,7 +51,7 @@
     letter-spacing: .5px;
 }
 .spanis_harga{
-    color: #d56340;
+    color: green;
     font-weight: bold;
 }
 .spanHijau,
@@ -63,6 +63,25 @@
 }
 .spanMerah{
     color: red;
+}
+.add_paginate{
+    font-family: 'Oswald';
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 3rem;
+}
+.add_paginate .page-numbers.current{
+    background-color: #000;
+}
+.add_paginate .page-numbers{
+    background-color: #d56340;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 

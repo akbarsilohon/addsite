@@ -64,11 +64,18 @@ if( have_posts() ){ ?>
                                 </span>
                                 <span class="spa">
                                     <span class="spanis">Stok:</span>
-                                    <?php if( !empty( get_post_meta( get_the_ID(), 'harga', true ))){
-                                        echo '<span class="spanHijau">Ada</span>';
-                                    } else{
+                                    <?php 
+                                    $affiliateLazada = get_post_meta( get_the_ID(), 'lazada', true );
+                                    $affiliateShopee = get_post_meta( get_the_ID(), 'shopee', true );
+                                    $affiliateBlibli = get_post_meta( get_the_ID(), 'blibli', true );
+                                    $affiliateTokped = get_post_meta( get_the_ID(), 'tokopedia', true );
+
+                                    if( empty( $affiliateLazada ) && empty( $affiliateShopee ) && empty( $affiliateBlibli ) && empty( $affiliateTokped ) ){
                                         echo '<span class="spanMerah">Habis</span>';
-                                    } ?>
+                                    } else{
+                                        echo '<span class="spanHijau">Ada</span>';
+                                    }
+                                    ?>
                                 </span>
                             </div>
                         </a>
@@ -78,11 +85,15 @@ if( have_posts() ){ ?>
                 } ?>
             </div>
 
-            <?php $jikaAdalagi = paginate_links();
-            if( $jikaAdalagi ){
-                echo 'masih ada';
-            }
-            ?>
+            <div class="add_paginate">
+                <?php echo paginate_links( array(
+                    'mid_size'      =>  2,
+                    'show_all'      =>  false,
+                    'prev_text'     =>  '<< Prev',
+                    'next_text'     =>  'Next >>'
+                )); ?>
+            </div>
+
         </div>
 
         <div class="add_texright">

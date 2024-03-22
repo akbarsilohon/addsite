@@ -17,7 +17,7 @@ FlexboxClose.addEventListener( 'click', function(){
 
 jQuery( document ).ready( function( $ ){
 
-    // script jquery untuk tombol load more ---------------
+    // script jquery untuk tombol load more home page -----
     $( document ).on( 'click', '.add_btn_load', function(){
         var that = $( this );
         var page = that.data( 'page' );
