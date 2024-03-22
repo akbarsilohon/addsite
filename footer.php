@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="foInner">
                     <div class="innerLef">
-                        &copy; <a href="<?php echo bloginfo( 'url' ); ?>"><?php echo bloginfo( 'name' ); ?></a> <span><?php echo the_time( 'Y' ); ?></span>
+                        &copy; <a href="<?php echo bloginfo( 'url' ); ?>"><?php echo bloginfo( 'name' ); ?></a> <span><?php echo the_time('Y'); ?></span>
                     </div>
                     <div class="innerRight">
                         <span>Powered By:</span>

@@ -39,3 +39,54 @@ function add_robots( $robots ){
 
     return $robots;
 }
+
+
+// Default favicon ======================
+// ======================================
+$siteIcon = get_site_icon_url();
+if( empty( $siteIcon )){
+    add_action( 'admin_head', 'add_default_site_icon' );
+    add_action( 'wp_head', 'add_default_site_icon' );
+
+    function add_default_site_icon(){
+        $defIcon = ADD_URI . '/asset/image/favicon.jpg'; ?>
+
+        <link rel="shortcut icon" href="<?php echo $defIcon; ?>" type="image/x-icon">
+        <link rel="apple-touch-icon" href="<?php echo $defIcon; ?>">
+
+        <?php
+    }
+}
+
+
+// Default logo login Wordpress ====================
+// =================================================
+add_action( 'login_enqueue_scripts', 'add_login_enqueue_logo' );
+function add_login_enqueue_logo(){
+
+    // login favicon --------------
+    $getSiteIcon = get_site_icon_url();
+    $defLoginIcon = ADD_URI . '/asset/image/favicon.jpg';
+    $fixIconLogin = !empty( $getSiteIcon ) ? $getSiteIcon : $defLoginIcon; ?>
+
+    <link rel="shortcut icon" href="<?php echo $fixIconLogin; ?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php echo $fixIconLogin; ?>">
+
+    <?php
+
+    $logo = get_option( 'add_logo' );
+    $defLogo = ADD_URI . '/asset/image/logo.png';
+    $fixLogo = !empty( $logo ) ? $logo : $defLogo; ?>
+
+    <style type="text/css">
+        #login h1 a, .login h1 a{
+            background-image: url(<?php echo $fixLogo; ?>);
+            height:60px;
+            width:285px;
+            background-size: 285px 60px;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+<?php
+}

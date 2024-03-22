@@ -1,0 +1,96 @@
+.add_taxinner{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto 250px;
+    grid-gap: 2rem;
+}
+.add_taxlooping{
+    margin-top: 1rem;
+    display: block;
+}
+.add_taxpost{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+.add_taxA{
+    display: grid;
+    grid-template-columns: 120px auto;
+    grid-gap: 1rem;
+    text-decoration: none;
+    font-family: 'Oswald';
+    color: #555;
+}
+.taxImage{
+    width: 120px;
+    height: auto;
+}
+.taxData{
+    display: flex;
+    flex-direction: column;
+}
+.textTT{
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+.spa{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #777;
+}
+.spa .spanis,
+.spanis_idr{
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+.spanis_harga{
+    color: #d56340;
+    font-weight: bold;
+}
+.spanHijau,
+.spanMerah{
+    font-weight: bold;
+}
+.spanHijau{
+    color: green;
+}
+.spanMerah{
+    color: red;
+}
+
+
+/* Media tablet */
+@media( max-width:780px ){
+    .add_taxinner{
+        display: block;
+    }
+    .add_taxleft{
+        margin-bottom: 2rem;
+    }
+}
+
+/* Media smartphone */
+@media( max-width:560px ){
+    .add_taxpost{
+        padding: 10px 5px;
+    }
+    .add_taxA{
+        grid-template-columns: 90px auto;
+        grid-gap: 5px;
+    }
+    .taxImage{
+        width: 90px;
+    }
+    .textTT{
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+}

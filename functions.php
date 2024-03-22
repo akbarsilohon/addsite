@@ -24,3 +24,18 @@ function ADD_PART( $filename ){
 require ADD_DIR . '/func/tema.php';
 require ADD_DIR . '/func/remove.php';
 require ADD_DIR . '/func/scripts.php';
+require ADD_DIR . '/func/ajax.php';
+
+
+
+// Custom post ===================================
+// ===============================================
+require ADD_DIR . '/inc/custom-post/index.php';
+require ADD_DIR . '/inc/custom-post/meta-box.php';
+
+
+
+// Admin handler =================================
+// ===============================================
+require ADD_DIR . '/inc/admin/run.php';
+require ADD_DIR . '/inc/admin/handler/general.php';

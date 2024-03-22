@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('../../../asset/fonts/oswald.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pt Serif';
+    src: url('../../../asset/fonts/ptserif.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.add_container{
+    width: 100%;
+    font-family: 'Pt Serif';
+    padding: 1rem 0;
+}
+.add_container .add_data{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-gap: 1rem;
+}
+.add_data label{
+    font-weight: bold;
+    font-size: 14px;
+}
+.fitu_hp_title{
+    margin-top: 3rem;
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 20px;
+}
+.fitur_list{
+    display: grid;
+    grid-template-columns: auto 80px;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+.fitur_list .hapus-fitur{
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button#tambah-fitur{
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #075307;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+}

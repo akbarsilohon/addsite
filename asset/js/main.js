@@ -14,3 +14,30 @@ FlexboxOpen.addEventListener( 'click', function(){
 FlexboxClose.addEventListener( 'click', function(){
     FlexboxCounter.classList.add( 'flex100' );
 });
+
+jQuery( document ).ready( function( $ ){
+
+    // script jquery untuk tombol load more ---------------
+    $( document ).on( 'click', '.add_btn_load', function(){
+        var that = $( this );
+        var page = that.data( 'page' );
+        var newPage = page + 1;
+        var ajaxUrl = that.data( 'url' );
+
+        $.ajax({
+            url: ajaxUrl,
+            type: 'post',
+            data: {
+                page: page,
+                action: 'add_post_load_more'
+            },
+            error: function( response ){
+                console.log( response );
+            },
+            success: function( response ){
+                that.data( 'page', newPage );
+                $( '.add_post-list' ).append( response );
+            }
+        });
+    });
+});

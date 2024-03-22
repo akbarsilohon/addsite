@@ -186,6 +186,47 @@ header.add_head{
     margin-right: 5px
 }
 
+/* Span */
+.add_section{
+    position: relative;
+    text-align: center;
+    border-top: 1px solid #d56340;
+    border-bottom: 1px solid #d56340;
+    padding: 10px 0;
+    margin-bottom: 1rem;
+}
+.add_span{
+    font-family: 'Oswald';
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* add_merkInner */
+.add_cat_ul{
+    list-style: none;
+}
+.add_cat_ul .add_cat_li{
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.add_cat_ul .add_cat_li::before{
+    content: '\21E2 ';
+    margin-right: 10px;
+    color: #d56340;
+    font-weight: bold;
+}
+.add_cat_li .add_cat_link{
+    color: #d56340;
+    transition: all .5s;
+    font-weight: bold;
+    text-decoration: none;
+}
+.add_cat_li:hover .add_cat_link{
+    color: #000;
+    transition: all .5s;
+}
+
 /* Footer */
 .add_footer{
     width: 100%;
@@ -249,6 +290,11 @@ header.add_head{
     .add_smob{
         display: flex;
     }
+    .add_cat_ul{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
 }
 
 /* Desain mobile */
@@ -261,5 +307,14 @@ header.add_head{
     }
     .add_ftop{
         padding-top: 40px;
+    }
+    .add_cat_ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .foInner{
+        justify-content: center;
+    }
+    .innerRight{
+        display: none;
     }
 }
