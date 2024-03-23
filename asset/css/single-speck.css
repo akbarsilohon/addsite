@@ -177,6 +177,50 @@ tbody tr td:nth-child(1){
     width: 250px;
 }
 
+/* Terkait */
+.add_related-brand{
+    margin-bottom: 2rem;
+}
+.spcRelated-looping{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+.spcRelated-art{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+}
+.spcRelated-a{
+    text-decoration: none;
+}
+.spcRelated-img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.spcRelated-title{
+    color: #000;
+    font-family: 'Oswald';
+    font-size: 16px;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+.spcRelated-price{
+    color: #ec4e1e;
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+}
+.spcRelated-idr{
+    color: #555;
+}
+
 /* Sidebar */
 .add_newpostLoop{
     width: 100%;
@@ -213,44 +257,51 @@ tbody tr td:nth-child(1){
 
 
 /* Tablet */
-.spcGrid{
-    display: block;
-}
-.add_newpostLoop{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+@media( max-width: 780px){
+    .spcGrid{
+        display: block;
+    }
+    .add_newpostLoop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
 }
 
 /* Mobile */
-.speckHeader{
-    display: block;
-}
-.speckThumb{
-    margin-bottom: 1rem;
-}
-.spcData_top{
-    display: block;
-    text-align: center;
-    margin-bottom: -15px;
-}
-.spcData_top .spcH_title{
-    font-size: 20px;
-    line-height: 25px;
-    margin-bottom: 1rem;
-}
-.spcUloop{
-    display: block;
-}
-.spcList{
-    margin-bottom: 1rem;
-}
-tbody tr td:nth-child(1){
-    width: 120px;
-}
-.add_newpostLoop{
-    display: block;
-}
-.add_sidPost{
-    margin-bottom: 1rem;
+@media( max-width: 560px){
+    .speckHeader{
+        display: block;
+    }
+    .speckThumb{
+        margin-bottom: 1rem;
+    }
+    .spcData_top{
+        display: block;
+        text-align: center;
+        margin-bottom: -15px;
+    }
+    .spcData_top .spcH_title{
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 1rem;
+    }
+    .spcUloop{
+        display: block;
+    }
+    .spcList{
+        margin-bottom: 1rem;
+    }
+    tbody tr td:nth-child(1){
+        width: 120px;
+    }
+    .add_newpostLoop{
+        display: block;
+    }
+    .add_sidPost{
+        margin-bottom: 1rem;
+    }
+    .spcRelated-looping{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

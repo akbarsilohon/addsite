@@ -54,7 +54,6 @@ function add_new_post_type_speck(){
         'show_ui'               =>  true,
         'show_admin_column'     =>  true,
         'query_var'             =>  true,
-        'show_in_menu'          =>  true,
         'rewrite'               =>  array( 'slug' => 'merk' )
     );
 

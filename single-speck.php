@@ -149,9 +149,8 @@ get_header(); ?>
                 <?php
             } ?>
     
-            <!-- Merk hp terkait -->
-            
-            <!-- Hp update terbaru -->
+            <!-- Spesifikasi terkait dan smartphone terbaru -->
+            <?php ADD_PART( 'views/widget/speck-related' ); ?>
         </div>
     
         <div class="speckSingle-right">
