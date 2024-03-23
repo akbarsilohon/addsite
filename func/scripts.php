@@ -23,6 +23,15 @@ function add_enqueue_scripts(){
         wp_enqueue_style( 'archive-speck', ADD_URI . '/asset/css/archive-speck.css', array(), fileatime( ADD_DIR . '/asset/css/archive-speck.css' ), 'all' );
     }
 
+    // single post ----------------
+    if( is_single()){
+        if( get_post_type() === 'speck' ){
+            wp_enqueue_style( 'single-speck', ADD_URI . '/asset/css/single-speck.css', array(), fileatime( ADD_DIR . '/asset/css/single-speck.css' ), 'all' );
+        } else{
+            wp_enqueue_style( 'single-css', ADD_URI . '/asset/css/single.css', array(), fileatime( ADD_DIR . '/asset/css/single.css' ), 'all' );
+        }
+    }
+
     // Main js
     wp_enqueue_script( 'add-call-jquery', ADD_URI . '/asset/js/jquery.min.js', array(), null, true );
     wp_enqueue_script( 'add-script', ADD_URI . '/asset/js/main.js', array(), fileatime( ADD_DIR . '/asset/js/main.js' ), true );
@@ -39,6 +48,9 @@ function add_panggil_css_js_admin(){
 
     // Custom postingan speck ------------
     wp_enqueue_style( 'panggil-css-speck-admin', ADD_URI . '/inc/custom-post/css/speck-admin.css', array(), fileatime( ADD_DIR . '/inc/custom-post/css/speck-admin.css' ), 'all' );
+
+    // Admin css --------------------------
+    wp_enqueue_style( 'panggil-css-admin', ADD_URI . '/inc/admin/css/admin.css', array(), fileatime( ADD_DIR . '/inc/admin/css/admin.css'), 'all' );
 
     // Jquery untuk admin panel -----------
     wp_enqueue_script( 'add-admin-jquery', ADD_URI . '/inc/admin/js/admin.js', array(), fileatime( ADD_DIR . '/inc/admin/js/admin.js'), true );

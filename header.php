@@ -52,6 +52,14 @@
     </div>
 </header>
 
+<?php $iklanHeader = get_option( 'add_ads_header' );
+if( !empty( $iklanHeader )){ ?>
+<div class="container">
+    <div class="add_ads"><?php echo $iklanHeader; ?></div>
+</div>
+<?php
+} ?>
+
 <div id="add_flexbox" class="add_flexbox flex100">
     <div class="flex_head">
         <h3 class="add_flxt"><?php echo bloginfo( 'name' ); ?></h3>

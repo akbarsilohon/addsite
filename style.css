@@ -227,6 +227,13 @@ header.add_head{
     transition: all .5s;
 }
 
+.add_ads{
+    background-color: aquamarine;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
 /* Footer */
 .add_footer{
     width: 100%;

@@ -10,9 +10,6 @@ get_header();
 if( have_posts() ){ ?>
 
 <div class="container">
-
-    <div class="taxtAds"></div>
-
     <div class="add_taxinner">
         <div class="add_taxleft">
             <div class="add_section">

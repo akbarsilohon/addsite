@@ -28,6 +28,8 @@ $logo = get_option( 'add_logo' ); ?>
 // Tombol kembali keatas blog ----------
 function tombol_backtop(){
     $backTop = get_option( 'add_back_top' ); ?>
-    <input type="checkbox" name="add_back_top" id="add_back_top" value="true" <?php if( $backTop === 'true') echo 'checked class="checked"'; ?>>
+    <div class="add_checkbox_counter <?php if( $backTop === 'true') echo 'checked'; ?>" id="add_checkbox_counter">
+        <input type="checkbox" name="add_back_top" id="add_back_top" value="true" <?php if( $backTop === 'true') echo 'checked'; ?>>
+    </div>
     <?php
 }

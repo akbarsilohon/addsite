@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('../../../asset/fonts/oswald.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pt Serif';
+    src: url('../../../asset/fonts/ptserif.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.add_admin-container{
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Pt Serif';
+    padding: 20px;
+}
+.add_admin-title{
+    font-family: 'Oswald';
+    margin-bottom: 3rem;
+    color: #222;
+}
+#add_imglogo_prev{
+    height: 60px;
+    width: auto;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+.add_checkbox_counter,
+.checkbox_counter,
+.iniJugaBisaHilang,
+.CaPubIklan{
+    background: url('../img/checkbox.png') no-repeat;
+    width: 52px;
+    height: 23px;
+    background-position: bottom;
+}
+.add_checkbox_counter.checked,
+.checkbox_counter.checked,
+.iniJugaBisaHilang.checked,
+.CaPubIklan.checked{
+    background-position: top;
+}
+.add_checkbox_counter input,
+.checkbox_counter input,
+.iniJugaBisaHilang input,
+.CaPubIklan input{
+    width: 52px;
+    height: 23px;
+    opacity: 0;
+}
+#add_jumlah_konten_terkait,
+.add_bisaHilang{
+    display: none;
+}

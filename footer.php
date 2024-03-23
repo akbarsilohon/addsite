@@ -5,6 +5,17 @@
  * @link https://github.com/akbarsilohon/addsite.git
  */ ?>
 
+    <?php 
+    $iklanFooter = get_option( 'add_ads_footer' );
+    if( !empty( $iklanFooter )){ ?>
+        <div class="container">
+            <div class="add_ads"><?php echo $iklanFooter; ?></div>
+        </div>
+    <?php
+    }
+    
+    ?>
+
     <footer class="add_footer">
         <div class="foo_top">
             <div class="container">

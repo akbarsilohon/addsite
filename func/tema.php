@@ -90,3 +90,28 @@ function add_login_enqueue_logo(){
 
 <?php
 }
+
+
+
+// Replace tag Image =======================
+// =========================================
+if( !is_admin()){
+    add_filter( 'the_content', 'lazy_load_conten_img' );
+    add_filter( 'widget_text', 'lazy_load_conten_img' );
+
+    function lazy_load_conten_img( $content ){
+        $content = preg_replace( '/(<img.+)(src)/Ui', '$1data-$2', $content );
+        return $content;
+    }
+
+    add_filter( 'wp_get_attachment_image_attributes', 'silo_img_attchment_attributes', 10, 2 );
+    function silo_img_attchment_attributes( $atts, $attachment ){
+        $atts[ 'data-src' ] = $atts[ 'src' ];
+        $atts[ 'src' ] = ADD_URI . '/asset/image/no-image.jpg';
+        if( isset( $atts[ 'srcset' ])){
+            unset( $atts[ 'srcset' ] );
+        }
+
+        return $atts;
+    }
+}

@@ -24,6 +24,15 @@ function add_general(){ ?>
     <h1 class="add_admin-title">Pengaturan Umum</h1>
     <?php settings_errors(); ?>
 
+    <?php 
+    $Logo = get_option( 'add_logo' );
+    $defLogo = ADD_URI . '/asset/image/logo.png';
+    $fixLogoPreview = !empty( $Logo ) ? $Logo : $defLogo;
+
+    echo '<img id="add_imglogo_prev" src="' . $fixLogoPreview . '">';
+
+    ?>
+
     <form action="options.php" method="post" class="add_admin-form">
         <?php settings_fields( 'add-general-settings-group' ); ?>
         <?php do_settings_sections( 'add_general' ); ?>
@@ -35,13 +44,36 @@ function add_general(){ ?>
 }
 
 // Single post ---------
-function add_single(){
+function add_single(){ ?>
 
+<div class="add_admin-container">
+    <h1 class="add_admin-title">Pengaturan Artikel</h1>
+    <?php settings_errors(); ?>
+
+    <form action="options.php" method="post" class="add_admin-form" id="add_checkbox">
+        <?php settings_fields( 'add-single-post-settings-group' ); ?>
+        <?php do_settings_sections( 'add_single' ); ?>
+        <?php submit_button( 'Simpan' ); ?>
+    </form>
+</div>
+
+<?php
 }
 
 // Ads code ------------
-function add_ads(){
+function add_ads(){ ?>
+<div class="add_admin-container">
+    <h1 class="add_admin-title">Kode Iklan</h1>
 
+    <?php settings_errors(); ?>
+
+    <form action="options.php" method="post" class="add_admin-form">
+        <?php settings_fields( 'add-ads-settings-group' ); ?>
+        <?php do_settings_sections( 'add_ads' ); ?>
+        <?php submit_button( 'Simpan' ); ?>
+    </form>
+</div>
+<?php
 }
 
 // Header & Footer -----
@@ -54,3 +86,5 @@ function add_insert(){
 // Inisiasi untuk menyimpan options ==================
 // ===================================================
 add_action( 'admin_init', 'add_simpan_opsi_umum' );
+add_action( 'admin_init', 'add_simpan_opsi_single_postingan' );
+add_action( 'admin_init', 'add_simpan_opsi_ads' );

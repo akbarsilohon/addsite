@@ -1,0 +1,119 @@
+.dataSpeckAll{
+    display: block;
+    margin-top: 2rem;
+}
+.speckSearch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald';
+}
+.cariSpeck{
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+.speckForm{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.speckForm,
+.speckForm #formCariHape{
+    width: 100%;
+    max-width: 400px;
+}
+.speckForm #formCariHape{
+    outline: none;
+    border: none;
+}
+.loopingSpeckAll{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+.allSpeck-post{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+.allSpeck-a{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-gap: 1rem;
+    text-decoration: none;
+    color: #000;
+}
+.allSpeck-img{
+    width: 100%;
+    height: auto;
+}
+.allSpeck-data{
+    display: block;
+}
+.allSpeck-title{
+    margin-top: 10px;
+    font-family: 'Oswald';
+    font-size: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    /* word-break: break-all; */
+}
+.allSpeck-price{
+    font-size: 14px;
+    color: #d56340;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+.allSpeck-idr{
+    color: #444;
+}
+.spanMerah{
+    color: red;
+}
+.spanHijau{
+    color: green;
+}
+
+.allSpeck-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.allSpeck-btn .add_allSpeck-btn{
+    background-color: #d56340;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Oswald';
+    cursor: pointer;
+}
+
+
+/* Tablet */
+@media( max-width: 780px ){
+    .loopingSpeckAll{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* mobile */
+@media( max-width: 560px ){
+    .cariSpeck{
+        font-size: 20px;
+    }
+    .allSpeck-a{
+        display: block;
+        text-align: center;
+    }
+    .allSpeck-title{
+        font-size: 16px;
+        line-height: 20px;
+    }
+}

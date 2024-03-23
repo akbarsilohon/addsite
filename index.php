@@ -16,11 +16,6 @@ $speckPost = new WP_Query( array(
 if( $speckPost->have_posts()){ ?>
 
 <div class="container">
-
-    <div class="add_ads">
-        
-    </div>
-
     <div class="spekInner">
         <div class="add_section">
             <span class="add_span">Smartphone Terbaru</span>
@@ -75,6 +70,14 @@ wp_reset_query();
 
 if( have_posts()){ ?>
 
+<?php $iklanKedua = get_option( 'add_ads_header' );
+if( !empty( $iklanKedua )){ ?>
+<div class="container">
+    <div class="add_ads"><?php echo $iklanKedua; ?></div>
+</div>
+<?php
+} ?>
+
 <div class="container">
     <div class="add_post">
         <div class="post_article">
@@ -94,7 +97,7 @@ if( have_posts()){ ?>
                                     'loading'       =>  'lazy'
                                 ));
                             } else{
-                                $spekDefImage = ADD_URI . '/asset/image/favicon.jpg';
+                                $spekDefImage = ADD_URI . '/asset/image/no-image.jpg';
                                 echo '<img class="add_post-thumb" src="'. $spekDefImage .'">';
                             } ?>
 
