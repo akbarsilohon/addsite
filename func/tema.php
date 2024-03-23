@@ -115,3 +115,28 @@ if( !is_admin()){
         return $atts;
     }
 }
+
+// Mengambil data category postingan =================
+// ===================================================
+// Tanpa url ----------------
+function add_cats(){
+    $categories = get_the_category();
+    $sparator = ', ';
+    $output = '';
+    $i=1;
+
+    if( !empty( $categories )){
+        foreach( $categories as $category ){
+            if( $i > 1 ){
+                $output .= $sparator;
+            }
+
+            $output = $category->name;
+            $i++;
+        }
+    }
+
+    echo $output;
+}
+
+// Dengan url ---------------

@@ -1,0 +1,256 @@
+.spcGrid{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-gap: 2rem;
+}
+.speckSingle-left{
+    display: block;
+    position: relative;
+}
+.spcBreadchrume{
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    font-family: 'Oswald';
+}
+.spcBreadchrume a{
+    color: #d56340;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+.speckHeader{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-bottom: 3rem;
+}
+.speckThumb{
+    width: 100%;
+    height: auto;
+}
+.spcData_top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.spcData_top .spcH_title{
+    font-family: 'Oswald';
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #000;
+    word-wrap: break-word;
+}
+.spcBox_data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.spcHarga{
+    font-size: 20px;
+    color: #d56340;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: 'Oswald';
+}
+.spcHarga .scpIDR{
+    color: #000;
+}
+.spcVarian{
+    margin-bottom: 1rem;
+    font-size: 13px;
+    font-family: 'Oswald';
+    color: #444;
+}
+.spcBox_btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+.spcBtn{
+    border: none;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+}
+.spcBtn.lazada{
+    background-color: #0f146a;
+}
+.spcBtn.shopee{
+    background-color: #e74b2c;
+}
+.spcBtn.blibli{
+    background-color: #008fd2;
+}
+.spcBtn.tokped{
+    background-color: #3faf48;
+}
+.spcBtn a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 30px;
+    font-weight: bold;
+}
+.spcFitur{
+    display: block;
+}
+.spcFtitle,
+.speckKonten-title{
+    width: 100%;
+    background-color: #ffa366;
+    color: #000;
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-family: 'Oswald';
+}
+.spcUloop{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+.spcList::before{
+    content: '\2713';
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-weight: bold;
+}
+.spcList{
+    font-size: 18px;
+    line-height: 1.7rem;
+    color: #444;
+    word-wrap: break-word;
+    margin-left: 1rem;
+}
+.spcReview{
+    margin-bottom: 2rem;
+}
+.spcReview .scpLinkReview{
+    color: #e74b2c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.7rem;
+}
+.speckKonten-body{
+    position: relative;
+    width: 100%;
+}
+.spcContent_inner{
+    margin-top: 1rem;
+}
+.spcContent_inner table,
+.spcContent_inner p{
+    font-size: 18px;
+    line-height: 1.7rem;
+    color: #333;
+}
+.spcContent_inner table{
+    width: 100%;
+    margin-bottom: 30px;
+    border: none;
+}
+table tbody tr td {
+    padding: 5px 0;
+    border-bottom: 1px solid #d56340;
+    font-size: 16px;
+    line-height: 2rem;
+    color: var(--bl2);
+    word-break: break-all;
+}
+tbody tr td:nth-child(1){
+    width: 250px;
+}
+
+/* Sidebar */
+.add_newpostLoop{
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.add_sidPost{
+    display: grid;
+    grid-template-columns: 90px auto;
+    grid-gap: 10px;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+.add_sidPost .spcAsideImg{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+}
+.spcAside_data{
+    font-family: 'Oswald';
+}
+.add_spcCats{
+    display: block;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+.spcAside_title{
+    color: #000;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+/* Tablet */
+.spcGrid{
+    display: block;
+}
+.add_newpostLoop{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+/* Mobile */
+.speckHeader{
+    display: block;
+}
+.speckThumb{
+    margin-bottom: 1rem;
+}
+.spcData_top{
+    display: block;
+    text-align: center;
+    margin-bottom: -15px;
+}
+.spcData_top .spcH_title{
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 1rem;
+}
+.spcUloop{
+    display: block;
+}
+.spcList{
+    margin-bottom: 1rem;
+}
+tbody tr td:nth-child(1){
+    width: 120px;
+}
+.add_newpostLoop{
+    display: block;
+}
+.add_sidPost{
+    margin-bottom: 1rem;
+}
