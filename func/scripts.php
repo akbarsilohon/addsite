@@ -21,6 +21,8 @@ function add_enqueue_scripts(){
         wp_enqueue_style( 'tax-speck', ADD_URI . '/asset/css/tax-speck.css', array(), fileatime( ADD_DIR . '/asset/css/tax-speck.css' ), 'all' );
     } else if( is_post_type_archive( 'speck' )){
         wp_enqueue_style( 'archive-speck', ADD_URI . '/asset/css/archive-speck.css', array(), fileatime( ADD_DIR . '/asset/css/archive-speck.css' ), 'all' );
+    } else if( is_archive() && !is_post_type_archive( 'speck' )){
+        wp_enqueue_style( 'archive', ADD_URI . '/asset/css/archive.css', array(), fileatime( ADD_DIR . '/asset/css/archive.css' ), 'all' );
     }
 
     // single post ----------------
@@ -30,6 +32,11 @@ function add_enqueue_scripts(){
         } else{
             wp_enqueue_style( 'single-css', ADD_URI . '/asset/css/single.css', array(), fileatime( ADD_DIR . '/asset/css/single.css' ), 'all' );
         }
+    }
+
+    // Page css ------------
+    if( is_page()){
+        wp_enqueue_style( 'page-css', ADD_URI . '/asset/css/page.css', array(), fileatime( ADD_DIR . '/asset/css/page.css' ), 'all' );
     }
 
     // Main js
