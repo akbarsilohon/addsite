@@ -46,5 +46,38 @@
 
     <?php wp_footer(); ?>
 
+    <?php 
+    $backTopCheck = get_option( 'add_back_top' );
+    if( !empty( $backTopCheck ) && $backTopCheck === 'true' ){ ?>
+        <a href="#" id="addBacktoTop" class="addBacktoTop silo_d_none">
+            <img src="<?php echo ADD_URI . '/asset/image/arrow.png'; ?>" class="imgAddBacktotop">
+            <span class="add_ekor"></span>
+        </a>
+        <script>
+            var silo_backto_top = document.getElementById('addBacktoTop');
+            window.onscroll = function(){
+                if( document.body.scrollTop > 300 
+                    || document.documentElement.scrollTop > 300 ){
+                        silo_backto_top.classList.remove('silo_d_none');
+                        document.querySelector( '.add_head' ).style.position = 'fixed';
+                        document.querySelector( '.add_head' ).style.top = '0';
+                        document.querySelector( '.add_head' ).style.zIndex = '99';
+                    } else {
+                        silo_backto_top.classList.add('silo_d_none');
+                        document.querySelector( '.add_head' ).style.position = 'inherit';
+                        document.querySelector( '.add_head' ).style.top = '0';
+                        document.querySelector( '.add_head' ).style.zIndex = 'inherit';
+                    }
+            }
+        </script>
+        <?php
+    }
+    ?>
+
+    <?php $footerHtml = get_option( 'add_footer_code' );
+    if( !empty( $footerHtml )){
+        echo $footerHtml;
+    } ?>
+
 </body>
 </html>

@@ -140,3 +140,23 @@ function add_cats(){
 }
 
 // Dengan url ---------------
+function add_cat__(){
+    $categories = get_the_category();
+    $sparator = ', ';
+    $output = '';
+    $i = 1;
+
+    if( !empty($categories)){
+        foreach( $categories as $category ){
+            if( $i > 1 ){
+                $output .= $sparator;
+            }
+
+            $output = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+
+            $i++;
+        }
+    }
+
+    echo $output;
+}

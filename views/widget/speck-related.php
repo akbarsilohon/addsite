@@ -11,7 +11,7 @@ if( $categories && !is_wp_error( $categories )){
 
     $related_args = array(
         'post_type' => 'speck',
-        'posts_per_page' => 10,
+        'posts_per_page' => 8,
         'post__not_in' => array(get_the_ID()),
         'tax_query' => array(
             array(

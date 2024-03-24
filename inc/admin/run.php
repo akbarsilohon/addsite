@@ -77,8 +77,21 @@ function add_ads(){ ?>
 }
 
 // Header & Footer -----
-function add_insert(){
+function add_insert(){ ?>
 
+<div class="add_admin-container">
+    <h1 class="add_admin-title">Insert Header & Footer</h1>
+
+    <?php  settings_errors(); ?>
+
+    <form action="options.php" method="post" class="add_admin-form">
+        <?php settings_fields( 'add-insert-settings-group' ); ?>
+        <?php do_settings_sections( 'add_insert' ); ?>
+        <?php submit_button( 'Simpan' ); ?>
+    </form>
+</div>
+
+<?php
 }
 
 
@@ -88,3 +101,4 @@ function add_insert(){
 add_action( 'admin_init', 'add_simpan_opsi_umum' );
 add_action( 'admin_init', 'add_simpan_opsi_single_postingan' );
 add_action( 'admin_init', 'add_simpan_opsi_ads' );
+add_action( 'admin_init', 'add_simpan_opsi_insert' );

@@ -1,0 +1,224 @@
+.add_single{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-gap: 2rem;
+}
+.addInner,
+.addArticle{
+    width: 100%;
+}
+.addArticle-top{
+    margin-bottom: 1rem;
+    font-family: 'Oswald';
+}
+.divCat{
+    transform: skew(-10deg);
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+.aCat a{
+    background-color: #d56340;
+    color: #fff;
+    padding: 7px 10px;
+    text-decoration: none;
+}
+.addArticle-title{
+    letter-spacing: 1px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #000;
+}
+.addArticle-meta{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+.addArticle_img-author{
+    width: 40px;
+    height: 40px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.addArticle-meta-right{
+    display: flex;
+    flex-direction: column;
+}
+.author_name,
+.tanggalPublish{
+    color: #666;
+    font-size: 14px;
+    margin: 3px 0;
+}
+.author_name a{
+    color: #d56340;
+    text-decoration: none;
+}
+.addArticle-thumbnail{
+    width: 100%;
+    height: auto;
+}
+.addArticle-bot p,
+.addArticle-bot ol,
+.addArticle-bot ul{
+    font-size: 18px;
+    line-height: 2rem;
+    color: #666;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+}
+.addArticle-bot p a,
+.addArticle-bot ol a,
+.addArticle-bot ul a{
+    color: #d56340;
+    text-decoration: none;
+}
+.addArticle-bot ul{
+    list-style: square;
+    margin-left: 25px
+}
+.addArticle-bot ol{
+    list-style: decimal;
+    margin-left: 25px
+}
+.addArticle-bot h2,
+.addArticle-bot h3,
+.addArticle-bot h4,
+.addArticle-bot h5,
+.addArticle-bot h6 {
+    font-family: 'Oswald';
+    color: #444;
+    letter-spacing: 1px;
+    margin-bottom: 10px
+}
+
+.addArticle-bot h2 {
+    font-size: 28px;
+    line-height: 33px
+}
+
+.addArticle-bot h3 {
+    font-size: 22px;
+    line-height: 26px
+}
+
+.addArticle-bot h4 {
+    font-size: 18px;
+    line-height: 22px
+}
+
+.addArticle-bot h5 {
+    font-size: 16px;
+    line-height: 20px
+}
+
+.addArticle-bot h6 {
+    font-size: 14px;
+    line-height: 18px
+}
+.addArticle-bot p a img,
+.addArticle-bot p img{
+    width: 100%;
+    height: auto;
+    margin-bottom: -10px;
+}
+.addArticle-bot table{
+    width: 100%;
+    margin-bottom: 30px;
+    border: none;
+}
+.addArticle-bot table thead{
+    background-color: #d56340;
+    color: #fff;
+}
+table thead tr th {
+    padding: 5px 10px;
+    text-align: left;
+    font-size: 18px;
+}
+tbody tr td {
+    padding: 5px 10px;
+    border-bottom: 1px solid #d56340;
+    font-size: 16px;
+    line-height: 2rem;
+    color: #666;
+}
+
+/* Media tablet */
+@media( max-width: 780px ){
+    .add_single{
+        margin-top: 2rem;
+        display: block;
+    }
+}
+
+
+/* Media mobile */
+@media( max-width: 560px ){
+    .addArticle-title{
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .addArticle_img-author{
+        width: 35px;
+        height: 35px;
+    }
+    .author_name,
+    .tanggalPublish{
+        font-size: 12px;
+    }
+    .addArticle-thumbnail{
+        width: calc(100% + 40px);
+        margin-left: -20px;
+    }
+    .addArticle-bot ol,
+    .addArticle-bot p,
+    .addArticle-bot ul {
+        font-size: 16px;
+    }
+
+    .addArticle-bot p a img,
+    .addArticle-bot p img{
+        min-width: calc(100% + 40px);
+        max-width: calc(100% + 40px);
+        margin-left: -20px;
+        margin-bottom: -20px
+    }
+
+    .addArticle-bot h2 {
+        font-size: 26px;
+        line-height: 31px
+    }
+
+    .addArticle-bot h3 {
+        font-size: 20px;
+        line-height: 24px
+    }
+
+    .addArticle-bot h4 {
+        font-size: 17px;
+        line-height: 20px
+    }
+
+    .addArticle-bot h5 {
+        font-size: 16px;
+        line-height: 18px
+    }
+
+    .addArticle-bot h6 {
+        font-size: 14px;
+        line-height: 18px
+    }
+
+    table thead tr th {
+        padding: 5px 10px;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400
+    }
+}

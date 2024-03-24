@@ -53,6 +53,7 @@ header.add_head{
     padding-bottom: 10px;
     box-sizing: border-box;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all .5s;
 }
 .add_hf{
     display: flex;
@@ -234,6 +235,10 @@ header.add_head{
     margin: 1rem 0;
 }
 
+.silo_d_none{
+    display:none;
+}
+
 /* Footer */
 .add_footer{
     width: 100%;
@@ -282,6 +287,26 @@ header.add_head{
     text-decoration: none;
 }
 
+.addBacktoTop{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 25px;
+    bottom: 40px;
+    background-color: #d56340;
+    border-radius: 50%;
+    display: flex;
+}
+.addBacktoTop .imgAddBacktotop{
+    width: 40px;
+    height: 40px;
+    object-position: center;
+    object-fit: cover;
+}
+.silo_d_none{
+    display: none;
+}
+
 /* Desain tablet */
 @media( max-width: 780px ){
     .add_hf{
@@ -328,5 +353,30 @@ header.add_head{
         width: calc(100% + 40px);
         margin-left: -20px;
         max-width: calc(100% + 40px);
+    }
+    .addBacktoTop{
+        width: 50px;
+        right: 0;
+        bottom: 60px;
+        background-color: transparent;
+        border-radius: 0;
+        align-items: end;
+    }
+    .addBacktoTop .imgAddBacktotop{
+        width: 40px;
+        height: 40px;
+        object-position: center;
+        object-fit: cover;
+        background-color: #000;
+        border-radius: 50%;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+    .addBacktoTop .add_ekor{
+        width: 40px;
+        background-color: #000;
+        height: 10px;
+        z-index: 1;
+        margin-left: -15px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     }
 }

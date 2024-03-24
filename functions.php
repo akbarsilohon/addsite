@@ -41,3 +41,9 @@ require ADD_DIR . '/inc/admin/run.php';
 require ADD_DIR . '/inc/admin/handler/general.php';
 require ADD_DIR . '/inc/admin/handler/single-post.php';
 require ADD_DIR . '/inc/admin/handler/ads.php';
+require ADD_DIR . '/inc/admin/handler/insert.php';
+
+
+// Shorcode =======================================
+// ================================================
+require ADD_DIR . '/inc/shortcode/code.php';
