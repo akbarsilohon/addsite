@@ -34,10 +34,13 @@ get_header(); ?>
             </article>
 
             <!-- Related Post -->
+            <?php ADD_PART( 'views/post/related' ); ?>
         </div>
 
         <!-- Sidebar -->
-        <div class="add_sibebar_single"></div>
+        <div class="add_sibebar_single">
+            <?php ADD_PART( 'views/post/single-sidebar' ); ?>
+        </div>
     </div>
 </div>
 

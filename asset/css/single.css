@@ -149,11 +149,99 @@ tbody tr td {
     color: #666;
 }
 
+/* Related post */
+.addRelatedBox{
+    display: block;
+    margin-bottom: 2rem;
+}
+.addRelated-loop{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+.addRelated-post{
+    text-align: center;
+}
+.addRelated-a{
+    text-decoration: none;
+    font-family: 'Oswald';
+    display: block;
+}
+.addRelated-thumb{
+    width: 100%;
+    height: 120px;
+    object-position: center;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.addRelated-title{
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+}
+
+/* Sidebar */
+.ssmargin{
+    margin-top: 2rem;
+}
+.add_side-smartphone,
+.add_side-art-data{
+    display: block;
+}
+.add_side-art{
+    margin-bottom: 1rem;
+}
+.add_side-art-link{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-gap: 1rem;
+    text-decoration: none;
+    color: #000;
+}
+.add_side-art-thumb{
+    width: 100px;
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+}
+.add_side-art-title{
+    font-family: 'Oswald';
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.side_art-span{
+    font-size: 14px;
+    color: #d56340;
+}
+.span_add-idr{
+    color: #444;
+    font-weight: bold;
+}
+
 /* Media tablet */
 @media( max-width: 780px ){
     .add_single{
         margin-top: 2rem;
         display: block;
+    }
+
+    /* Sidebar */
+    .add_side-smartphone{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+    .add_side-art-link{
+        display: block;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .add_side-art-thumb{
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
     }
 }
 
@@ -220,5 +308,27 @@ tbody tr td {
         text-align: left;
         font-size: 16px;
         font-weight: 400
+    }
+
+    /* Related */
+    .addRelated-loop{
+        display: block;
+    }
+    .ddRelated-post{
+        margin-bottom: 1rem;
+    }
+    .addRelated-a{
+        display: grid;
+        grid-template-columns: 90px auto;
+        grid-gap: 1rem;
+        text-align: left;
+    }
+    .addRelated-thumb{
+        height: 90px;
+    }
+
+    /* SIdebar */
+    .add_side-smartphone{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
