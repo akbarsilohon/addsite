@@ -10,7 +10,7 @@
 // Define Theme =================================
 // ==============================================
 define( 'ADD_NAME', 'SILOHON' );
-define( 'ADD_VER', '1.8.0' );
+define( 'ADD_VER', '1.9.0' );
 define( 'ADD_THEME_URI', 'https://github.com/akbarsilohon/addsite.git' );
 define( 'ADD_URI', get_template_directory_uri());
 define( 'ADD_DIR', get_template_directory());
