@@ -160,3 +160,16 @@ function add_cat__(){
 
     echo $output;
 }
+
+
+// Exerpt postingan =============================
+// ==============================================
+add_filter( 'excerpt_more', 'add_excerpt_more_replace' );
+function add_excerpt_more_replace(){
+    return '...';
+}
+
+add_filter( 'excerpt_length', 'add_excerpt_length_replace' );
+function add_excerpt_length_replace(){
+    return 25;
+}

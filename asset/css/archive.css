@@ -1,0 +1,148 @@
+.arcPost{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-gap: 2rem;
+}
+.arcPost-left,
+.arcPost-loop{
+    display: block;
+}
+.arcPost-list{
+    display: block;
+    margin-bottom: 2rem;
+}
+.arcPost-a{
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-gap: 1rem;
+    text-decoration: none;
+}
+.arcPost-thumbnail{
+    width: 300px;
+    height: 220px;
+    object-position: center;
+    object-fit: cover;
+}
+.arcPost-meta{
+    display: block;
+}
+.arcPost-title{
+    font-size: 25px;
+    font-family: 'Oswald';
+    line-height: 33px;
+    color: #000;
+    margin-bottom: 1rem;
+}
+.arcPost-meta p{
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #777;
+    line-height: 1.7rem;
+}
+
+/* Pagination */
+.add_paginate{
+    font-family: 'Oswald';
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 3rem;
+}
+.add_paginate .page-numbers.current{
+    background-color: #000;
+}
+.add_paginate .page-numbers{
+    background-color: #d56340;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Sidebar */
+.add_side-smartphone,
+.add_side-art-data,
+.arcPost-right{
+    display: block;
+}
+.add_side-art{
+    margin-bottom: 1rem;
+}
+.add_side-art-link{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-gap: 1rem;
+    text-decoration: none;
+    color: #000;
+}
+.add_side-art-thumb{
+    width: 100px;
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+}
+.add_side-art-title{
+    font-family: 'Oswald';
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.side_art-span{
+    font-size: 14px;
+    color: #d56340;
+}
+.span_add-idr{
+    color: #444;
+    font-weight: bold;
+}
+
+/* Media tablet */
+@Media( max-width: 780px ){
+    .arcPost{
+        display: block;
+    }
+    .arcPost-left{
+        margin-bottom: 3rem;
+    }
+
+    /* SIdebar */
+    .add_side-smartphone{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+    .add_side-art-link{
+        display: block;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .add_side-art-thumb{
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+@media( max-width: 560px ){
+    .arcPost-a{
+        grid-template-columns: 90px auto;
+    }
+    .arcPost-thumbnail{
+        width: 90px;
+        height: 90px;
+    }
+    .arcPost-title{
+        font-size: 16px;
+        line-height: 23px;
+    }
+    .arcPost-meta p{
+        display: none;
+    }
+    .add_side-smartphone{
+        grid-template-columns: repeat( 2, 1fr);
+    }
+}
