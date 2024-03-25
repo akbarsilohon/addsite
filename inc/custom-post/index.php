@@ -60,3 +60,16 @@ function add_new_post_type_speck(){
     register_post_type( 'speck', $args );
     register_taxonomy( 'speck_category', array( 'speck' ), $cat_args );
 }
+
+// Replace hasil pencarian ====================
+// ============================================
+add_filter( 'template_include', 'add_new_template_include' );
+function add_new_template_include( $template ){
+    global $wp_query;
+    $post_type = get_query_var( 'post_type' );
+    if( $wp_query->is_search && $post_type == 'speck' ){
+        return locate_template( 'search-speck.php' );
+    }
+
+    return $template;
+}

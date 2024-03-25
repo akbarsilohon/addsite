@@ -39,6 +39,11 @@ function add_enqueue_scripts(){
         wp_enqueue_style( 'page-css', ADD_URI . '/asset/css/page.css', array(), fileatime( ADD_DIR . '/asset/css/page.css' ), 'all' );
     }
 
+    // 404 -------------------
+    if( is_404()){
+        wp_enqueue_style( 'page-404', ADD_URI . '/asset/css/404.css', array(), fileatime( ADD_DIR . '/asset/css/404.css' ), 'all' );
+    }
+
     // Main js
     wp_enqueue_script( 'add-call-jquery', ADD_URI . '/asset/js/jquery.min.js', array(), null, true );
     wp_enqueue_script( 'add-script', ADD_URI . '/asset/js/main.js', array(), fileatime( ADD_DIR . '/asset/js/main.js' ), true );
