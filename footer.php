@@ -74,6 +74,41 @@
     }
     ?>
 
+    <?php 
+    /**
+     * Lazy load iklan Google jika di aktifkan
+     * @package silohon-add-site
+     * @link https://github.com/akbarsilohon/addsite.git
+     */
+    $lazyLoadCheck = get_option( 'tunda_iklan' );
+    if( !empty( $lazyLoadCheck ) && $lazyLoadCheck === 'true' ){
+        $kodeCaPub = get_option( 'capub_iklan' ); ?>
+
+        <script>
+            // <![CDATA[
+            var lazyLoadAdsenseGoogle = false;
+
+            window.addEventListener( 'scroll', function(){
+                if(( document.documentElement.scrollTop != 0 && lazyLoadAdsenseGoogle === false ) || ( document.body.scrollTop != 0 && lazyLoadAdsenseGoogle === false )){
+                    ( function(){
+                        var ads = document.createElement( 'script' );
+                        ads.setAttribute( 'crossorigin', 'anonymous' );
+                        ads.async = true,
+                        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-<?php echo $kodeCaPub ?>';
+                        var sc = document.getElementsByTagName( 'script' )[0];
+                        sc.parentNode.insertBefore( ads, sc );
+                    })();
+                    lazyLoadAdsenseGoogle = true;
+                }
+            }, true );
+            // ]]>
+        </script>
+
+        <?php
+    }
+    
+    ?>
+
     <?php $footerHtml = get_option( 'add_footer_code' );
     if( !empty( $footerHtml )){
         echo $footerHtml;

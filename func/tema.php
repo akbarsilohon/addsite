@@ -171,5 +171,63 @@ function add_excerpt_more_replace(){
 
 add_filter( 'excerpt_length', 'add_excerpt_length_replace' );
 function add_excerpt_length_replace(){
-    return 25;
+    $ExerptLength = get_option( 'add_panjang_exerpt' );
+    $fixExerpt = !empty( $ExerptLength ) ? $ExerptLength : 25;
+
+    return $fixExerpt;
+}
+
+
+
+// Proteksi kontent =============================
+// ==============================================
+add_action( 'wp_head', 'add_lindungi_kontent_saya' );
+function add_lindungi_kontent_saya(){
+    $protextCheck = get_option( 'add_lindungi_konten' );
+    if( !empty( $protextCheck ) && $protextCheck === 'true' ){
+        if( is_single()){ ?>
+
+            <style>
+                body {
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                ::selection {
+                    background-color: #EFEFEF;
+                    color: #333;
+                }
+            </style>
+
+            <script>
+                document.ondragstart = function(){
+                    return false;
+                }
+
+                document.oncontextmenu = function(event) {
+                    event.preventDefault();
+                    var pesan = "Mau ngapain?";
+                    var alertBox = document.createElement("div");
+                    alertBox.innerHTML = pesan;
+                    alertBox.style.position = "fixed";
+                    alertBox.style.backgroundColor = "#cc3300";
+                    alertBox.style.color = "white";
+                    alertBox.style.border = "1px solid #ccc";
+                    alertBox.style.padding = "10px";
+                    alertBox.style.left = (event.clientX + 5) + "px";
+                    alertBox.style.top = (event.clientY + 5) + "px";
+                    document.body.appendChild(alertBox);
+                    
+                    setTimeout(function() {
+                        document.body.removeChild(alertBox);
+                    }, 2000);
+                };
+            </script>
+
+            <?php
+        }
+    }
 }

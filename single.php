@@ -31,10 +31,53 @@ get_header(); ?>
                 }
                 ?>
 
+                <?php 
+                /**
+                 * Tags template silohon-add-site
+                 * @package silohon-add-site
+                 * @link https://github.com/akbarsilohon/addsite.git
+                 */
+                the_tags(
+                    '<div class="add_tags"><span class="add_tags-title">Topik:</span>',
+                    '',
+                    '</div>'
+                );
+                ?>
+
+                <?php 
+                /**
+                 * Postingan selanjutnya dan postingan sebelumnya
+                 * @package silohon-add-site
+                 * @link https://github.com/akbarsilohon/addsite.git
+                 */
+                $nexPrev = get_option( 'add_next_konten' );
+                if( !empty( $nexPrev ) && $nexPrev === 'true' ){ ?>
+                    <div class="add_post-navigation">
+                        <?php the_post_navigation( array(
+                            'prev_text'  => __( '← %title' ),
+                            'next_text'  => __( '%title →' ),
+                            'in_same_term' => true, 
+                            'taxonomy' => __( 'category' )
+                        )); ?>
+                    </div>
+                    <?php
+                }
+                
+                ?>
+
             </article>
 
             <!-- Related Post -->
             <?php ADD_PART( 'views/post/related' ); ?>
+
+            <?php 
+            $checkomentar = get_option( 'add_izin_komentar' );
+            if( !empty( $checkomentar ) && $checkomentar === 'true' ){
+                if( comments_open() ){
+                    comments_template();
+                }
+            }
+            ?>
         </div>
 
         <!-- Sidebar -->

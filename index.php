@@ -121,10 +121,6 @@ if( !empty( $iklanKedua )){ ?>
         </div>
 
         <aside class="add_merk">
-            <div class="add_section">
-                <span class="add_span">Brand Smartphone</span>
-            </div>
-
             <div class="add_merkInner">
                 <?php 
                 $categories = get_terms( array(
@@ -134,6 +130,9 @@ if( !empty( $iklanKedua )){ ?>
 
                 if( ! empty( $categories ) && ! is_wp_error( $categories )){ ?>
 
+                    <div class="add_section">
+                        <span class="add_span">Brand Smartphone</span>
+                    </div>
                     <ul class="add_cat_ul">
                         <?php foreach( $categories as $category ){ ?>
 

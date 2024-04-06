@@ -149,6 +149,54 @@ tbody tr td {
     color: #666;
 }
 
+/* Tags */
+.add_tags{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: 'Oswald';
+    margin-bottom: 1rem;
+}
+.add_tags-title{
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+}
+.add_tags a{
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #d56340;
+    text-decoration: none;
+}
+
+/* post navigation */
+.add_post-navigation{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.add_post-navigation .screen-reader-text{
+    display: none;
+}
+.nav-links{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    font-family: 'Oswald';
+}
+.nav-links a{
+    color: #d56340;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1.7rem;
+}
+.nav-links .nav-previous{
+    text-align: left;
+}
+.nav-links .nav-next{
+    text-align: right;
+}
+
 /* Related post */
 .addRelatedBox{
     display: block;
@@ -178,6 +226,68 @@ tbody tr td {
     font-size: 16px;
     line-height: 20px;
     color: #000;
+}
+
+/* Komentar */
+.add_comments{
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.comment-reply-title{
+    font-family: 'Oswald';
+    margin-bottom: 1rem;
+}
+.comment-notes,
+.comment-form-cookies-consent,
+.logged-in-as{
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+}
+.logged-in-as a{
+    color: #d56340;
+    font-weight: bold;
+    text-decoration: none;
+}
+.comment-form-comment label{
+    display: none;
+}
+.comment-form-comment textarea{
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+    outline: none;
+}
+.comment-form-author,
+.comment-form-email,
+.comment-form-url{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input{
+    border: none;
+    outline: none;
+}
+.form-submit{
+    margin-top: 2rem;
+}
+.form-submit .submit{
+    border: none;
+    font-family: 'Oswald';
+    padding: 10px 20px;
+    background-color: #d56340;
+    cursor: pointer;
+    color: #fff;
 }
 
 /* Sidebar */
