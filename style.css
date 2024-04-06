@@ -1,7 +1,7 @@
 /* =========================================
 Theme Name: Silohon Add Site
 Theme URI: https://github.com/akbarsilohon/addsite.git
-Version: 2.0.0
+Version: 2.1.0
 Description: Tema wordpress mempermudah uprove Google Adsense.
 Tags: Google Adsense, Add site, Responsive, Lazy load
 Author: Nur Akbar
@@ -15,6 +15,7 @@ Text Domain: silohon-add-site
     font-weight: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Oswald';
     src: url('asset/fonts/oswald.woff2') format('woff2');
@@ -22,30 +23,35 @@ Text Domain: silohon-add-site
     font-weight: normal;
     font-display: swap;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Pt Serif';
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: #fff;
 }
-.container{
+
+.container {
     width: 100%;
     max-width: 1100px;
     padding: 0 20px;
     margin: 0 auto;
 }
-img{
+
+img {
     width: 0;
     height: 0;
 }
+
 /* Header */
-header.add_head{
+header.add_head {
     position: relative;
     background-color: #fff;
     width: 100%;
@@ -55,24 +61,29 @@ header.add_head{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     transition: all .5s;
 }
-.add_hf{
+
+.add_hf {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.add_side{
+
+.add_side {
     cursor: pointer;
     transition: all .3s;
 }
-.add_side:hover svg *{
+
+.add_side:hover svg * {
     stroke: #d56340;
     transition: all .3s;
 }
-.add_logo a .add_img{
+
+.add_logo a .add_img {
     width: auto;
     height: 35px;
 }
-.add_sdesk{
+
+.add_sdesk {
     width: 100%;
     max-width: 400px;
     margin-left: auto;
@@ -81,13 +92,15 @@ header.add_head{
     gap: 10px;
     box-sizing: border-box;
 }
-.add_sdesk input#add_search_desktop_device{
+
+.add_sdesk input#add_search_desktop_device {
     outline: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 5px 10px;
 }
-.add_sdesk .add_sdesk_btn{
+
+.add_sdesk .add_sdesk_btn {
     border: none;
     background-color: #d56340;
     color: #fff;
@@ -95,11 +108,13 @@ header.add_head{
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 /* Flexbox menu */
 .flex100 {
     transform: translate(-105%)
 }
-.add_flexbox{
+
+.add_flexbox {
     z-index: 99;
     background-color: #fff;
     position: absolute;
@@ -112,7 +127,8 @@ header.add_head{
     transition: .5s;
     box-sizing: border-box;
 }
-.add_flexbox .flex_head{
+
+.add_flexbox .flex_head {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -121,29 +137,34 @@ header.add_head{
     font-size: 20px;
     color: #d56340;
 }
-.flex_head .add_close{
+
+.flex_head .add_close {
     transition: all .5s;
     cursor: pointer;
 }
-.flex_head .add_close:hover svg *{
+
+.flex_head .add_close:hover svg * {
     fill: #d56340;
     transition: all .5s;
 }
-.add_smob{
+
+.add_smob {
     width: 100%;
     display: none;
     box-sizing: border-box;
     gap: 10px;
     margin-bottom: 2rem;
 }
-.add_smob #add_search_mob_device{
+
+.add_smob #add_search_mob_device {
     width: 75%;
     outline: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 5px 10px;
 }
-.add_smob .add_smob_btn{
+
+.add_smob .add_smob_btn {
     border: none;
     background-color: #d56340;
     color: #fff;
@@ -151,11 +172,13 @@ header.add_head{
     padding: 5px 10px;
     border-radius: 5px;
 }
-.add_head_menu{
+
+.add_head_menu {
     list-style: none;
     font-family: 'Oswald';
 }
-.add_head_menu li{
+
+.add_head_menu li {
     margin: 10px 0;
     padding-bottom: 5px;
     padding-right: 10px;
@@ -164,31 +187,37 @@ header.add_head{
     width: max-content;
     transition: all .5s;
 }
-.add_head_menu li:hover a{
+
+.add_head_menu li:hover a {
     color: #d56340;
     transition: all .5s;
 }
-.add_head_menu li a{
+
+.add_head_menu li a {
     text-decoration: none;
     color: #000;
 }
-.add_head_menu li.current-menu-item a{
+
+.add_head_menu li.current-menu-item a {
     color: #d56340;
 }
-.add_head_menu .menu-item-has-children{
+
+.add_head_menu .menu-item-has-children {
     border-bottom: none;
 }
-.sub-menu{
+
+.sub-menu {
     margin-top: 1rem;
     list-style: none;
 }
+
 .add_head_menu .sub-menu li::before {
     content: '\21E2 ';
     margin-right: 5px
 }
 
 /* Span */
-.add_section{
+.add_section {
     position: relative;
     text-align: center;
     border-top: 1px solid #d56340;
@@ -196,7 +225,8 @@ header.add_head{
     padding: 10px 0;
     margin-bottom: 1rem;
 }
-.add_span{
+
+.add_span {
     font-family: 'Oswald';
     font-size: 16px;
     font-weight: bold;
@@ -204,50 +234,56 @@ header.add_head{
 }
 
 /* add_merkInner */
-.add_cat_ul{
+.add_cat_ul {
     list-style: none;
 }
-.add_cat_ul .add_cat_li{
+
+.add_cat_ul .add_cat_li {
     margin-bottom: 5px;
     font-size: 16px;
 }
-.add_cat_ul .add_cat_li::before{
+
+.add_cat_ul .add_cat_li::before {
     content: '\21E2 ';
     margin-right: 10px;
     color: #d56340;
     font-weight: bold;
 }
-.add_cat_li .add_cat_link{
+
+.add_cat_li .add_cat_link {
     color: #d56340;
     transition: all .5s;
     font-weight: bold;
     text-decoration: none;
 }
-.add_cat_li:hover .add_cat_link{
+
+.add_cat_li:hover .add_cat_link {
     color: #000;
     transition: all .5s;
 }
 
-.add_ads{
+.add_ads {
     background-color: aquamarine;
     width: 100%;
     max-width: 100%;
     margin: 1rem 0;
 }
 
-.silo_d_none{
-    display:none;
+.silo_d_none {
+    display: none;
 }
 
 /* Footer */
-.add_footer{
+.add_footer {
     width: 100%;
     margin-top: 4rem;
 }
-.foo_top{
+
+.foo_top {
     background-color: #dddddd;
 }
-.add_ftop{
+
+.add_ftop {
     padding: 1rem 0;
     list-style: none;
     display: flex;
@@ -257,22 +293,27 @@ header.add_head{
     gap: 1rem;
     font-family: 'Oswald';
 }
-.add_ftop li{
+
+.add_ftop li {
     flex-wrap: nowrap;
 }
-.add_ftop li a{
+
+.add_ftop li a {
     color: #000;
     text-decoration: none;
     transition: all .5s;
 }
-.add_ftop li:hover a{
+
+.add_ftop li:hover a {
     transition: all .5s;
     color: #d56340;
 }
-.foo_bot{
+
+.foo_bot {
     background-color: #000;
 }
-.foInner{
+
+.foInner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -281,13 +322,14 @@ header.add_head{
     font-size: 14px;
     color: #fff;
 }
+
 .innerLef a,
-.innerRight a{
+.innerRight a {
     color: #d56340;
     text-decoration: none;
 }
 
-.addBacktoTop{
+.addBacktoTop {
     width: 40px;
     height: 40px;
     position: fixed;
@@ -297,32 +339,38 @@ header.add_head{
     border-radius: 50%;
     display: flex;
 }
-.addBacktoTop .imgAddBacktotop{
+
+.addBacktoTop .imgAddBacktotop {
     width: 40px;
     height: 40px;
     object-position: center;
     object-fit: cover;
 }
-.silo_d_none{
+
+.silo_d_none {
     display: none;
 }
 
 /* Desain tablet */
-@media( max-width: 780px ){
-    .add_hf{
+@media(max-width: 780px) {
+    .add_hf {
         box-sizing: border-box;
         width: 100%;
     }
-    .add_sdesk{
+
+    .add_sdesk {
         display: none;
     }
-    header.add_head{
+
+    header.add_head {
         padding-top: 1rem;
     }
-    .add_smob{
+
+    .add_smob {
         display: flex;
     }
-    .add_cat_ul{
+
+    .add_cat_ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
@@ -330,31 +378,38 @@ header.add_head{
 }
 
 /* Desain mobile */
-@media( max-width: 560px ){
-    .add_logo a .add_img{
+@media(max-width: 560px) {
+    .add_logo a .add_img {
         height: 30px;
     }
-    header.add_head{
+
+    header.add_head {
         padding-bottom: 7px;
     }
-    .add_ftop{
+
+    .add_ftop {
         padding-top: 40px;
     }
-    .add_cat_ul{
+
+    .add_cat_ul {
         grid-template-columns: repeat(2, 1fr);
     }
-    .foInner{
+
+    .foInner {
         justify-content: center;
     }
-    .innerRight{
+
+    .innerRight {
         display: none;
     }
-    .add_ads{
+
+    .add_ads {
         width: calc(100% + 40px);
         margin-left: -20px;
         max-width: calc(100% + 40px);
     }
-    .addBacktoTop{
+
+    .addBacktoTop {
         width: 50px;
         right: 0;
         bottom: 60px;
@@ -362,7 +417,8 @@ header.add_head{
         border-radius: 0;
         align-items: end;
     }
-    .addBacktoTop .imgAddBacktotop{
+
+    .addBacktoTop .imgAddBacktotop {
         width: 40px;
         height: 40px;
         object-position: center;
@@ -371,7 +427,8 @@ header.add_head{
         border-radius: 50%;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     }
-    .addBacktoTop .add_ekor{
+
+    .addBacktoTop .add_ekor {
         width: 40px;
         background-color: #000;
         height: 10px;

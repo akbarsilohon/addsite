@@ -3,7 +3,7 @@
         editor.addButton( 'add_mce', {
             text: 'Silohon',
             type: 'menubutton',
-            menu: Array(
+            menu: [
                 // Ads Shortcode ---------
                 {
                     text: 'Iklan',
@@ -28,7 +28,6 @@
                     text: 'FAQ',
                     icon: 'icon faq_silo_icon',
                     onclick: function () {
-
                         var faqItems = [];
 
                         editor.windowManager.open({
@@ -91,14 +90,35 @@
                             ], onsubmit: function( e ){
                                 var JudulFaq = e.data.faq_t;
                                 var ParagrafFaq = e.data.faq_p;
-                                var isiFaq = '[add_faq judul="' + JudulFaq + '" paragraf="'+ ParagrafFaq +'"]\n' + faqItems.join('') + '[/add_faq]';
+                                var isiFaq = '[add_faq judul="' + JudulFaq + '" paragraf="'+ ParagrafFaq +'"]\n' + e.data.faq_c + '[/add_faq]';
 
                                 editor.insertContent( isiFaq );
                             }
                         });
                     }
+                },
+
+                // Youtube ShortCode -----
+                {
+                    text: 'Youtube',
+                    onclick: function(){
+                        editor.windowManager.open({
+                            title: 'Shortcode Youtube',
+                            body: {
+                                type: 'textbox',
+                                name: 'add_youtube',
+                                label: 'Video ID',
+                                minWidth: 380,
+                                value: '',
+                                placeholder: 'id video disini'
+                            },
+                            onsubmit: function( e ){
+                                editor.insertContent( '[add_youtube videoid="'+ e.data.add_youtube +'"]' );
+                            }
+                        });
+                    }
                 }
-            )
+            ]
         });
     });
 })();
