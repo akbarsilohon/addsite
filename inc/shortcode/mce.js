@@ -77,7 +77,7 @@
                                         var answer = editor.windowManager.getWindows()[0].find('#faq_a').value();
 
                                         if( question && answer ){
-                                            var faqItem = '[faq_q]' + question + '[/faq_q]\n[faq_a]' + answer + '[/faq_a]\n';
+                                            var faqItem = '<p>[faq_q]' + question + '[/faq_q]</p>\n<p>[faq_a]' + answer + '[/faq_a]</p>\n';
                                             faqItems.push( faqItem );
 
                                             var faqContentTextarea = editor.windowManager.getWindows()[0].find('#faq_c');
@@ -90,7 +90,7 @@
                             ], onsubmit: function( e ){
                                 var JudulFaq = e.data.faq_t;
                                 var ParagrafFaq = e.data.faq_p;
-                                var isiFaq = '[add_faq judul="' + JudulFaq + '" paragraf="'+ ParagrafFaq +'"]\n' + e.data.faq_c + '[/add_faq]';
+                                var isiFaq = '<p>[add_faq judul="' + JudulFaq + '" paragraf="'+ ParagrafFaq +'"]</p>\n' + e.data.faq_c + '<p>[/add_faq]</p>';
 
                                 editor.insertContent( isiFaq );
                             }

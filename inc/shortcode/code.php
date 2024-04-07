@@ -1,4 +1,4 @@
-script<?php
+<?php
 /**
  * Shorcode tema silohon add site
  * @package silohon-add-site
@@ -117,18 +117,16 @@ function callback_add_faq( $atts, $content = null ){
     $outputFaqs .= '<script type="application/ld+json">' . $json_ld_string . '</script>';
 
     $outputFaqs .= '<script>
-        document.addEventListener(\'click\', function(event) {
+        document.addEventListener("click", function(event) {
             var toggleButton = event.target;
-            // Periksa apakah yang diklik adalah tombol toggle
-            if (toggleButton.id === \'faq_header-toggle\') {
+            if (toggleButton.id === "faq_header-toggle") {
                 var answer = toggleButton.parentNode.nextElementSibling;
-                // Toggle status jawaban
-                if (answer.style.display === \'block\') {
-                    answer.style.display = \'none\';
-                    toggleButton.textContent = \'+\';
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                    toggleButton.textContent = "+";
                 } else {
-                    answer.style.display = \'block\';
-                    toggleButton.textContent = \'-\';
+                    answer.style.display = "block";
+                    toggleButton.textContent = "-";
                 }
             }
         });
@@ -143,21 +141,78 @@ function callback_add_faq( $atts, $content = null ){
 add_shortcode( 'add_youtube', 'callback_add_youtube' );
 function callback_add_youtube( $atts ){
     $videoID = $atts['videoid'];
-    $judulVideo = get_the_title( the_ID() );
+    $judulVideo = get_the_title();
 
     $ytVideo = '<style>.VdEmbed .tombol-play,.silo_embed .tombol-play{position:absolute;background-image:url("https://upload.wikimedia.org/wikipedia/commons/archive/0/09/20211015074810%21YouTube_full-color_icon_%282017%29.svg");background-size:cover;background-position:center;left:50%;z-index:9999999999;cursor:pointer}.silo_embed iframe,.silo_embed img{width:100%;height:100%}.silo_embed{width:100%;height:max-content;position:relative;margin-bottom:1rem}.silo_embed img{object-fit:cover;object-position:center}.VdEmbed .tombol-play{margin-left:-15px!important;top:120px!important;width:50px!important;height:35px!important}.silo_embed .tombol-play{margin-left:-35px;top:50%;width:70px;height:50px}.silo_embed .silCls{font-size:20px;color:#fff;background-color:#999;line-height:8px;margin-bottom:5px;padding:5px;float:right;cursor:pointer;border-radius:20px}.VdEmbed{position:fixed!important;width:336px!important;height:190px!important;left:40px;bottom:100px}@media(max-width:580px){.silo_embed{width:100%;height:200px}.VdEmbed{width:80%!important;height:auto fit-content!important;left:0!important;bottom:50px}.VdEmbed .tombol-play{top:70px!important;width:35px!important;height:25px!important}.silo_embed .tombol-play{top:40%;width:50px;height:35px}}</style>';
     $ytVideo .= '<div id="silo_embeded" video-id="' . $videoID . '" video-title="' . $judulVideo . '"></div>';
-    $ytVideo .= '<script>let isElementCreated=!1;function bElement(){if(!isElementCreated){let e=document.getElementById("silo_embeded"),t=e.getAttribute("video-id"),l=e.getAttribute("video-title"),i=document.createElement("div");i.classList.add("silo_embed","VdEmbed");let d=document.createElement("span");d.className="silCls",d.textContent="\xd7",d.addEventListener("click",function(){i.classList.remove("VdEmbed"),d.style.display="none"});let n=document.createElement("img");n.src="https://i.ytimg.com/vi_webp/"+t+"/hqdefault.webp",n.title=l;let a=document.createElement("div");a.classList.add("tombol-play"),a.addEventListener("click",function(){n.style.display="none",a.style.display="none",i.appendChild(s)});let s=document.createElement("iframe");s.src="https://www.youtube.com/embed/"+t+"?autoplay=1&rel=0",s.title=l,s.frameBorder="0",s.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",s.allowFullscreen=!0,i.appendChild(d),i.appendChild(n),i.appendChild(a),e.appendChild(i),isElementCreated=!0}}window.addEventListener("scroll",function(){(document.body.scrollTop>300||document.documentElement.scrollTop>300)&&bElement()});</script>';
-    $ytVideo .= '<script type="application/ld+json>
+    $ytVideo .= '<script>
+        let isElementCreated = false;
+
+        function bElement() {
+            if (!isElementCreated) {
+                const sDiv = document.getElementById("silo_embeded");
+                const vUrl = sDiv.getAttribute("video-id");
+                const vJudul = sDiv.getAttribute("video-title");
+
+                const inDiv = document.createElement("div");
+                inDiv.classList.add("silo_embed", "VdEmbed");
+
+                const EVurl = document.createElement("span");
+                EVurl.className = "silCls";
+                EVurl.textContent = "\u00D7";
+                EVurl.addEventListener("click", function() {
+                    // Menghapus class "VdEmbed" dari elemen <div>
+                    inDiv.classList.remove("VdEmbed");
+                    // Menyembunyikan tombol close
+                    EVurl.style.display = "none";
+                });
+
+                const Imgs = document.createElement("img");
+                Imgs.src = "https://i.ytimg.com/vi_webp/" + vUrl + "/hqdefault.webp";
+                Imgs.title = vJudul;
+
+                const lplay = document.createElement("div");
+                lplay.classList.add("tombol-play");
+                lplay.addEventListener("click", function(){
+                    Imgs.style.display = "none";
+                    lplay.style.display = "none";
+                    inDiv.appendChild(EIFrem);
+                });
+
+                const EIFrem = document.createElement("iframe");
+                EIFrem.src = "https://www.youtube.com/embed/" + vUrl + "?autoplay=1&rel=0";
+                EIFrem.title = vJudul;
+                EIFrem.frameBorder = "0";
+                EIFrem.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                EIFrem.allowFullscreen = true;
+
+                inDiv.appendChild(EVurl);
+                inDiv.appendChild(Imgs);
+                inDiv.appendChild(lplay);
+
+                sDiv.appendChild(inDiv);
+
+                isElementCreated = true;
+            }
+        }
+
+        // Fungsi untuk Scroll
+        window.addEventListener("scroll", function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                bElement();
+            }
+        });
+    </script>';
+    $ytVideo .= '<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "VideoObject",
                 "name": "'. $judulVideo .'",
-                "description": "Silahkan tonton video berikut mengenai '. $judulVideo .'",
+                "description": "Silahkan tonton video tentang '. $judulVideo .'",
                 "uploadDate": "' . get_the_date() . '",
-                "thumbnailUrl": "https://i.ytimg.com/vi_webp/' . $videoID . '/hqdefault.webp",
-                "contentUrl": "https://www.youtube.com/embed/' . $videoID . '/",
-                "embedUrl": "https://www.youtube.com/embed/' . $videoID . '/"
+                "thumbnailUrl": "https://i.ytimg.com/vi_webp/'. $videoID .'/hqdefault.webp",
+                "contentUrl": "https://www.youtube.com/embed/' . $videoID . '",
+                "embedUrl": "https://www.youtube.com/embed/' . $videoID . '"
             }
         </script>';
 

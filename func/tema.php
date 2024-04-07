@@ -231,3 +231,38 @@ function add_lindungi_kontent_saya(){
         }
     }
 }
+
+
+// Data Shcema navigator ===============================
+// =====================================================
+add_action( 'wp_footer', 'add_site_navigator' );
+function add_site_navigator(){
+    $menu_locations = get_nav_menu_locations();
+    if( isset($menu_locations['header-menu'])){
+        $menu_id = $menu_locations['header-menu'];
+        $menu_items = wp_get_nav_menu_items($menu_id);
+
+        if( $menu_items ){
+            $schema_actions = [];
+            foreach( $menu_items as $item ){
+                $schema_actions[] = array(
+                    '@type' => 'Action',
+                    'name' => $item->title,
+                    'url' => $item->url,
+                );
+            }
+
+            $schema = array(
+                '@context' => 'http://schema.org',
+                '@type' => 'SiteNavigationElement',
+                'potentialAction' => $schema_actions,
+            );
+
+            echo '
+                <script type="application/ld+json">
+                    ' . json_encode($schema, JSON_PRETTY_PRINT) . '
+                </script>
+            ';
+        }
+    }
+}
